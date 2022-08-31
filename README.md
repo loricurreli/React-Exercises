@@ -1,3 +1,7 @@
+Questa repository contiene gli esercizi relativi al modulo su React svolto durante il corso in Develhope. Di seguito la spiegazione dell'organizzazione degli esercizi sulla base dei vari argomenti.
+
+
+
 1. creare un nuovo progetto react che chiamerete `jsx-exercises`
 2. eseguire gli esercizi della parte introduction creando un branch per ogni esercizio. Chiamate i branch con il nome dell'esercizio come scritto di seguito
 ## introduction
