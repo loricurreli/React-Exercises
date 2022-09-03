@@ -1,7 +1,7 @@
 import React from "react";
-import { Hello } from "./components-02";
+import { Hello } from "./components-02"
 
-class App extends React.Component{
+export class App extends React.Component{
     render(){
         return (
             <div>
