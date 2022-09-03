@@ -1,0 +1,1 @@
+const sum = (a, b) => { <h2>The result is {a+b}</h2>};
