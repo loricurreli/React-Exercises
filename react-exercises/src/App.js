@@ -1,5 +1,5 @@
 import React from "react";
-import { Hello } from "./components-02"
+import { Hello } from "./Hello"
 
 export class App extends React.Component{
     render(){
