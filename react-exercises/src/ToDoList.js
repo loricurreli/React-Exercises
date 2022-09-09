@@ -9,8 +9,9 @@ export class ToDoList extends React.Component{
     }
 
     addItem = () => {
-        const value = document.querySelector("input").value
-        this.setState({items: this.state.items.concat(value)})
+        const input = document.querySelector("input")
+        this.setState({items: this.state.items.concat(input.value)})
+        input.value=""
     }
     render(){
         const list = this.state.items.map((value) => <li key={value}>{value}</li>);
