@@ -13,11 +13,17 @@ export class ToDoList extends React.Component{
         this.setState({items: this.state.items.concat(input.value)})
         input.value=""
     }
+    removeItem = (e) => {
+        const element = e.target.id
+        const removed = this.state.items.filter((item)=>item!=element)
+        this.setState({items: removed})
+        
+    }
     clearList = () => {
         this.setState({items: []})
     }
     render(){
-        const list = this.state.items.map((value) => <li key={value}>{value}</li>);
+        const list = this.state.items.map((value) => <li key={value}>{value} <button id={value} onClick={this.removeItem}>Remove Item</button></li>);
         return (
             <div>
               <ul>{list}</ul>
