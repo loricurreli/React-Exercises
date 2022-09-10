@@ -1,6 +1,9 @@
 import React from "react";
 
 export class Login extends React.Component{
+    constructor(props){
+        super(props)
+    }
     state = {
         username: "",
         password: "",
@@ -13,6 +16,7 @@ export class Login extends React.Component{
     render(){
         return(
             <div>
+                <form onSubmit={this.props.onLogin}>
                     <div>
                     <label>
                         Username:
@@ -30,7 +34,9 @@ export class Login extends React.Component{
                         Remember:
                         <input type="checkbox" name="remember" value={this.state.value} onChange={this.handleChange} />
                     </label>
-                    </div>                
+                    </div>          
+                    <button disabled={this.state.username && this.state.password ? false : true}>Login</button>   
+                </form>       
             </div>
         )
     }
