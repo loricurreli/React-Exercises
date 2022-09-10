@@ -16,21 +16,22 @@ export class Login extends React.Component{
                     <div>
                     <label>
                         Username:
-                        <input type="text" name="username" value={this.state.value} onChange={this.handleChange} />
+                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                     </label>
                     </div>
                     <div>
                     <label>
                         Password:
-                        <input type="password" name="password" value={this.state.value} onChange={this.handleChange} />
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
                     </label>                    
                     </div>
                     <div>
                     <label>
                         Remember:
-                        <input type="checkbox" name="remember" value={this.state.value} onChange={this.handleChange} />
+                        <input type="checkbox" name="remember" value={this.state.remember} onChange={this.handleChange} />
                     </label>
-                    </div>                
+                    </div>      
+                          
             </div>
         )
     }
