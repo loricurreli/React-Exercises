@@ -35,7 +35,8 @@ export class Login extends React.Component{
                         <input type="checkbox" name="remember" value={this.state.value} onChange={this.handleChange} />
                     </label>
                     </div>          
-                    <button disabled={this.state.username && this.state.password ? false : true}>Login</button>   
+                    <button disabled={this.state.username && this.state.password ? false : true}>Login</button>  
+                    <input type="reset"/>   
                 </form>       
             </div>
         )
