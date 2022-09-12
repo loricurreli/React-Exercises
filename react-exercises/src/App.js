@@ -1,10 +1,10 @@
 import React from "react";
-import { Welcome } from "./Welcome";
+import { Sum } from "./Sum";
 
 export function App(){
     return(
         <div>
-            < Welcome name="Lorenzo"></Welcome>
+            <Sum numbers={[1,2,3,4]}/>
         </div>
     )
 }
