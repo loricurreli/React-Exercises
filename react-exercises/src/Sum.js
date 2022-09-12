@@ -11,7 +11,3 @@ export function Sum(props){
         </div>
     )
 }
-
-Sum.defaultProps = {
-    numbers: [0,1,2]
-  };
