@@ -11,7 +11,9 @@ export class Login extends React.Component{
     }
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.name==="checkbox" ? e.target.checked : e.target.value});
-        console.log(this.state)
+    }
+    handleReset = () => {
+        this.setState({username: "", password: "", remember: false});
     }
     render(){
         return(
@@ -36,7 +38,7 @@ export class Login extends React.Component{
                     </label>
                     </div>          
                     <button disabled={this.state.username && this.state.password ? false : true}>Login</button>  
-                    <input type="reset"/>   
+                    <input type="reset" onClick={this.handleReset}/>   
                 </form>       
             </div>
         )
