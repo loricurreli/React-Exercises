@@ -7,7 +7,7 @@ export function Sum(props){
     });
     return(
         <div>
-            <p>{sum}</p>
+            <h1>{sum}</h1>
         </div>
     )
 }
