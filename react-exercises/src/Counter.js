@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 
 
-export function Counter(){
+export function Counter({initialInterval=1000, initialIncrement=10, initialValue=100}){
 
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(initialValue);
     useEffect(() => {
-        const timerID = setInterval(() => setCounter(counter + 1), 1000)
+        const timerID = setInterval(() => setCounter((counter) => counter + initialIncrement), initialInterval)
         return () => clearInterval(timerID)
     })
     
