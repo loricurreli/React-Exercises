@@ -5,7 +5,7 @@ export function App(){
     
     return(
         <div>
-            <Sum/>
+            <Sum />
         </div>
     )
 }
