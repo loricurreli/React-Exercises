@@ -1,10 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 
 export function Login(){
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [remember, setRemember] = useState(false); 
+    const [userData, setUserData] = useState(
+        {
+            username: "",
+            password: "",
+            remember: false
+        }
+    );
+
+    function handleChange(e){
+        const {name,type,value,checked} = e.target
+        setUserData({
+            ...userData,
+            [name] : type==="checkbox" ? checked : value}
+        )
+    }
 
     return(
         <div>
@@ -12,22 +24,22 @@ export function Login(){
                 <div>
                 <label>
                     Username:
-                    <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input type="text" name="username" value={userData.username} onChange={handleChange} />
                 </label>
                 </div>
                 <div>
                 <label>
                     Password:
-                    <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" name="password" value={userData.password} onChange={handleChange}/>
                 </label>                    
                 </div>
                 <div>
                 <label>
                     Remember:
-                    <input type="checkbox" name="remember" value={remember} onChange={(e) => setRemember(e.target.checked)} />
+                    <input type="checkbox" name="remember" value={userData.remember} onChange={handleChange} />
                 </label>
                 </div>          
-                <button disabled={username && password ? false : true}>Login</button>   
+                <button disabled={userData.username && userData.password ? false : true}>Login</button>   
             </form>       
         </div>
     )
