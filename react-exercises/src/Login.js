@@ -1,9 +1,7 @@
 import React from "react";
 
 export class Login extends React.Component{
-    constructor(props){
-        super(props)
-    }
+    
     state = {
         username: "",
         password: "",
@@ -14,6 +12,9 @@ export class Login extends React.Component{
         console.log(this.state)
     }
     render(){
+        const condition = {
+            backgroundColor: this.state.password.length > 7 ? 'green' : 'red'
+        }
         return(
             <div>
                 <form onSubmit={this.props.onLogin}>
@@ -35,7 +36,7 @@ export class Login extends React.Component{
                         <input type="checkbox" name="remember" value={this.state.value} onChange={this.handleChange} />
                     </label>
                     </div>          
-                    <button disabled={this.state.username && this.state.password ? false : true}>Login</button>   
+                    <button style={condition} disabled={this.state.username && this.state.password ? false : true}>Login</button>   
                 </form>       
             </div>
         )
