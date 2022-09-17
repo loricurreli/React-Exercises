@@ -18,12 +18,20 @@ export class Login extends React.Component{
             remember
         })
     }
-    
+    handleReset = (e) => {
+        e.preventDefault()
+        
+        this.setState({
+            username: "",
+            password: "",
+            remember: ""
+        })
+    }
     render(){
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="username" />
+                    <input type="text" name="username" autoFocus/>
                     <input type="password" name="password" />
                     <input type="checkbox" name="remember" />     
                     <button>Login</button>  
