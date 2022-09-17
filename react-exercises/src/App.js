@@ -1,17 +1,7 @@
-import React from "react";
-import { Login } from "./Login"
-export class App extends React.Component{
-    state = {
-        loggedIn: false
-    }
-    onSubmit = () => {
-        this.setState({ loggedIn: true})
-    }
-    render(){
-        return(
-            <div>
-                <Login onLogin={this.onSubmit}/>
-            </div>
-        )
-    }
+import { Welcome } from "./Welcome"
+
+export const App = () => {
+    return (<div className="welcome">
+        <Welcome name="Lorenzo"/>
+        </div>)
 }
