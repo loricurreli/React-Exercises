@@ -1,12 +1,36 @@
-import React from "react";
+import {Fragment} from "react";
+import { Welcome } from "./Welcome";
 import { GitHubUsersList } from "./GithubUsersList";
-
-export class App extends React.Component{
-    render(){
-        return (
+import { Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { ShowGithubUser } from "./ShowGithubUser";
+import { ClickCounter } from "./Counter";
+export const App = () => {
+    return (
+        <Routes>
+        <Route path="/" element={
+        <Fragment>
+            <Welcome name='Lorenzo'/>
             <div>
-                <GitHubUsersList />
+            <Link to="/counter">Show the counter</Link> 
             </div>
-        );
-    }
+            
+            <Link to="/users">Show the github users list</Link> 
+        </Fragment>
+    }/>
+        <Route path="/counter" element={<ClickCounter />} />
+        <Route path="/*" element={
+                    <Fragment>
+                        <div>Page not found</div>
+                        <Link to="/">Back to the homepage</Link>
+                    </Fragment>
+                }/>
+        <Route path="/users" element={<GitHubUsersList/>}>
+            <Route path=":username" element={<ShowGithubUser />} />
+        </Route>
+        
+    </Routes>
+                
+
+    )
 }
