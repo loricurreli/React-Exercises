@@ -19,6 +19,12 @@ export const App = () => {
             <Route index element={<h3>Insert /username param</h3>}/>
             <Route path=":username" element={<ShowGithubUser />} />
         </Route>
+        <Route path="*" element={
+                    <Fragment>
+                        <div>Page not found</div>
+                        <Link to="/">Back to the homepage</Link>
+                    </Fragment>
+                }/>
         
     </Routes>
     );
