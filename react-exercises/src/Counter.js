@@ -13,7 +13,7 @@ export function useCounter(initialValue = 0){
 
 
 }
-export function ClickCounter({initialValue = 0}) {
+export function Counter({initialValue = 0}) {
   const {value, onIncrement, onDecrement, onReset} = useCounter(initialValue)
 
   return (
