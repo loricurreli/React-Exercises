@@ -1,6 +1,6 @@
-import { Login } from './Login'
+import { Counter } from './Counter'
 
 
 export const App = () => {
-    return <Login />
+    return <Counter />
 }
