@@ -26,7 +26,8 @@ export const App = () => {
                     </Fragment>
                 }/>
         <Route path="/users" element={<GitHubUsersList/>}>
-            <Route path=":username" element={<ShowGithubUser />} />
+                <Route index element={<p>Add a user and select it</p>}/>
+                <Route path=":username" element={<ShowGithubUser />} />
         </Route>
         
     </Routes>
