@@ -1,11 +1,11 @@
 import React from "react";
-import { GithubUsersList } from "./GithubUsersList";
+import { GitHubUsersList } from "./GithubUsersList";
 
 export class App extends React.Component{
     render(){
         return (
             <div>
-                <GithubUsersList />
+                <GitHubUsersList />
             </div>
         );
     }

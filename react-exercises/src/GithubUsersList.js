@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { GithubUser } from "./GithubUser";
-export function GithubUsersList(){
 
-    const [users, setUsers] = useState("");
+export function GitHubUsersList() {
+    const [users, setUsers] = useState({ users: ["loricurreli"], newUser: null });
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setUsers(actualUsers => ({ ...actualUsers, newUser: e.target.elements.userfield.value}))
+    useEffect(() => {
+        setUsers(state => ({ ...state, users: [...state.users, state.newUser] }))
+    }, [users.newUser])
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setUsers(state => ({ ...state, newUser: event.target.elements.userfield.value }))
     }
 
-    return(
+    return (
         <div>
+            <h1>Users List</h1>
+            <ul>
+                {users.users.map((user,i) => user &&<li key={i}><GithubUser username={user} /></li>)}
+            </ul>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="username"/>
-                <input type="submit"/>
+                <input type="text" name="userfield" />
+                <button type="submit">Submit</button>
             </form>
         </div>
     )
