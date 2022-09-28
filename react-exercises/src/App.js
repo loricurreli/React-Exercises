@@ -7,6 +7,5 @@ export const App = () => {
   <button value={item} onClick={fn}>Delete</button>
   </li>)
   return (
-    <ToDoList render={render} />
   )
 }
