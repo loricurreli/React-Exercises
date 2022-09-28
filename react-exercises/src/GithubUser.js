@@ -1,18 +1,33 @@
 import React, { useState, useEffect } from "react";
 
-export function GithubUser(props){
-    
-    const [users, setUsers] = useState(undefined);
+export function useGitHubUser(username) {
+    const [user, setUser] = useState(undefined);
 
     useEffect(() => {
-        fetch(`https://api.github.com/users/${props.username}`)
-        .then(response => response.json())
-        .then(data => setUsers(data))
+        fetch(`https://api.github.com/users/${username}`)
+            .then(response => response.json())
+            .then(data => setUser(data))
+    }, [username])
 
-    })
+    return{
+        data: user
+    }
+}
+
+
+export function GithubUser(props){
+    
+    const {data} = useGitHubUser(props.username)
 
     
     return (<div>
-        {users && (<div> <h1>Nome utente: {users.login}</h1> <p>Id Utente: {users.id}</p> </div>)}
+        {data && (<div> <h1>Nome utente: {data.login}</h1> <p>Id Utente: {data.id}</p> </div>)}
         </div>)
 }
+
+
+
+
+
+
+
