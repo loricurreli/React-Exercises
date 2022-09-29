@@ -1,11 +1,12 @@
 import React from "react";
-import { ToDoList } from "./ToDoList";
+import { GithubUser } from "./GithubUser";
 
-export const App = () => {
-  const render = (state, fn) => state.map((item, i) =>
-   <li key={i}>{item} 
-  <button value={item} onClick={fn}>Delete</button>
-  </li>)
-  return (
-  )
+export class App extends React.Component{
+    render(){
+        return (
+            <div>
+                <GithubUser username="loricurreli"/>
+            </div>
+        );
+    }
 }
